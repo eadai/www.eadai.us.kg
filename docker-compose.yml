@@ -1,0 +1,18 @@
+x-default-opts: &default-opts
+  restart: always
+  tty: true
+  stdin_open: true
+  privileged: false
+  ipc: private
+  
+services:
+  web:
+    <<: *default-opts
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    entrypoint: /bin/bash -c "npm run dev"
