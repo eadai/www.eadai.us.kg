@@ -14,5 +14,5 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/app
+      - .:/app/eadai
     entrypoint: /bin/bash -c "npm run dev"
