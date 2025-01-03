@@ -25,6 +25,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Configure Webpack
+        run: |
+          echo "module.exports = { configureWebpack: { optimization: { minimize: true } } };" > vue.config.js
+
       - name: Build
         run: npm run build
 
